@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Tilt+Neon&display=swap");
+
+:root {
+  --color-black: #121212;
+  --color-golden: #e6af2f;
+  --color-lgrey: #e3e3e3;
+  --color-dgrey: #6a6a6a;
+
+  background-color: var(--color-black);
+  font-family: "Roboto", sans-serif;
+  font-family: "Tilt Neon", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  padding: 2rem 8rem;
+  overflow: hidden;
+  /* overflow-x: scroll; */
+}
+
+/* ::-webkit-scrollbar {
+  display: none;
+} */

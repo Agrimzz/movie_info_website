@@ -1,0 +1,31 @@
+.app__nav {
+  width: 100%;
+  color: var(--color-lgrey);
+  padding: 2rem 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-golden);
+}
+
+.app__nav-logo h1 {
+  font-size: 40px;
+}
+
+.golden {
+  color: var(--color-golden);
+}
+
+.app__nav-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  font-size: 20px;
+}
+
+.app__nav-listitem:hover {
+  color: var(--color-golden);
+  cursor: pointer;
+  border-bottom: 1px solid var(--color-golden);
+  transition: 0.5s ease;
+}

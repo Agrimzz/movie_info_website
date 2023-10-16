@@ -1,0 +1,24 @@
+.trend {
+  color: var(--color-golden);
+  font-size: 25px;
+}
+
+.app__trending {
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* overflow-x: scroll; */
+}
+
+.test {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.move {
+  padding: 1rem;
+}
