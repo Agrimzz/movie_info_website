@@ -6,6 +6,8 @@ import axios from "axios"
 import { useEffect } from "react"
 import { FaAngleLeft } from "react-icons/fa"
 import { FaAngleRight } from "react-icons/fa"
+import Carousel from "react-multi-carousel"
+import "react-multi-carousel/lib/styles.css"
 
 const Home = () => {
   const [data, setData] = useState([])
@@ -22,12 +24,46 @@ const Home = () => {
       })
   }, [])
 
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 1800 },
+      items: 5,
+      slidesToSlide: 2,
+      partialVisibilityGutter: 20,
+    },
+    desktop1: {
+      breakpoint: { max: 2000, min: 1600 },
+      items: 4,
+      partialVisibilityGutter: 20,
+    },
+    tablet: {
+      breakpoint: { max: 1600, min: 800 },
+      items: 2,
+      partialVisibilityGutter: 40,
+    },
+    mobile: {
+      breakpoint: { max: 800, min: 0 },
+      items: 1,
+    },
+  }
+
   return (
     <div>
       <Navbar />
       <section className="wrapper">
         <h1 className="trend">Trending Movies This Week</h1>
-        <div className="app__trending">
+        <Carousel
+          responsive={responsive}
+          className="app__trending"
+          autoPlay={true}
+          autoPlaySpeed={3000}
+          rewind
+          rewindWithAnimation="all 1s"
+          containerClass="carousel-container"
+          removeArrowOnDeviceType={["tablet", "mobile"]}
+          partialVisible={true}
+        >
           {data.length > 0 &&
             data.map((item, index) => {
               console.log(item.poster_path)
@@ -41,7 +77,7 @@ const Home = () => {
                 />
               )
             })}
-        </div>
+        </Carousel>
       </section>
     </div>
   )
