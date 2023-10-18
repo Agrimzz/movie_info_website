@@ -3,22 +3,50 @@
   font-size: 25px;
 }
 
+.slider-container {
+  /* overflow-x: scroll; */
+  position: relative;
+  width: 100%;
+}
+
+.slide-icon {
+  position: absolute;
+  color: #fff;
+  opacity: 70%;
+  cursor: pointer;
+}
+
+.slide-icon:hover {
+  color: var(--color-golden);
+  opacity: 100%;
+}
+
+.icon-left {
+  top: 40%;
+}
+
+.icon-right {
+  top: 40%;
+  right: 0;
+}
+
+.slider {
+  width: 100%;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.trend-box {
+  width: fit-content;
+}
+
 .app__trending {
   width: 100%;
   margin-top: 2rem;
   display: flex;
-  /* gap: 1rem;
-  flex-wrap: wrap; */
-  justify-content: space-between;
-  /* overflow-x: scroll; */
-}
-
-.test {
-  display: flex;
-  align-items: center;
   gap: 1rem;
-}
-
-.move {
-  padding: 1rem;
 }
