@@ -6,9 +6,11 @@ import axios from "axios"
 import { useEffect } from "react"
 import { FaAngleLeft } from "react-icons/fa"
 import { FaAngleRight } from "react-icons/fa"
+import Banner from "./components/Banner"
 
 const Home = () => {
   const [data, setData] = useState([])
+  const [banner, setBanner] = useState([])
   const sliderRef = useRef(null)
 
   useEffect(() => {
@@ -20,6 +22,14 @@ const Home = () => {
         if (response) {
           setData(response.data.results)
         }
+      })
+
+    axios
+      .get(
+        "https://api.themoviedb.org/3/movie/now_playing?api_key=a212d2a534451bb967da7b23e8a592c1"
+      )
+      .then((response) => {
+        setBanner(response.data.results.slice(0, 5))
       })
   }, [])
 
@@ -66,7 +76,6 @@ const Home = () => {
               <div className="app__trending">
                 {data.length > 0 &&
                   data.map((item, index) => {
-                    console.log(item.poster_path)
                     return (
                       <Card
                         key={index}
@@ -85,6 +94,22 @@ const Home = () => {
             className="slide-icon icon-right"
             onClick={slideRight}
           />
+        </div>
+      </section>
+
+      <section className="wrapper">
+        <h1 className="trend">Now Playing</h1>
+        <div className="banner-container">
+          {banner.length > 0 &&
+            banner.map((item, index) => {
+              return (
+                <Banner
+                  key={index}
+                  image={item.backdrop_path}
+                  title={item.title}
+                />
+              )
+            })}
         </div>
       </section>
     </div>
