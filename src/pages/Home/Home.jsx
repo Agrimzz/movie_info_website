@@ -7,6 +7,8 @@ import { useEffect } from "react"
 import { FaAngleLeft } from "react-icons/fa"
 import { FaAngleRight } from "react-icons/fa"
 import Banner from "./components/Banner"
+import Carousel from "react-multi-carousel"
+import "react-multi-carousel/lib/styles.css"
 
 const Home = () => {
   const [data, setData] = useState([])
@@ -29,7 +31,7 @@ const Home = () => {
         "https://api.themoviedb.org/3/movie/now_playing?api_key=a212d2a534451bb967da7b23e8a592c1"
       )
       .then((response) => {
-        setBanner(response.data.results.slice(0, 5))
+        setBanner(response.data.results.slice(0, 10))
       })
   }, [])
 
@@ -59,9 +61,58 @@ const Home = () => {
     }
   }, [])
 
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: 1,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 1,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 1,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  }
+
   return (
     <div>
       <Navbar />
+      <section className="wrapper">
+        <h1 className="trend">Now Playing</h1>
+        <Carousel
+          className="banner-container"
+          responsive={responsive}
+          autoPlay={true}
+          autoPlaySpeed={6000}
+          infinite={true}
+          removeArrowOnDeviceType={[
+            "superLargeDesktop",
+            "desktop",
+            "tablet",
+            "mobile",
+          ]}
+          pauseOnHover={false}
+        >
+          {banner.length > 0 &&
+            banner.map((item, index) => {
+              return (
+                <Banner
+                  key={index}
+                  image={item.backdrop_path}
+                  title={item.title}
+                  date={item.release_date}
+                  details={item.overview}
+                />
+              )
+            })}
+        </Carousel>
+      </section>
       <section className="wrapper">
         <h1 className="trend">Trending Movies This Week</h1>
 
@@ -94,22 +145,6 @@ const Home = () => {
             className="slide-icon icon-right"
             onClick={slideRight}
           />
-        </div>
-      </section>
-
-      <section className="wrapper">
-        <h1 className="trend">Now Playing</h1>
-        <div className="banner-container">
-          {banner.length > 0 &&
-            banner.map((item, index) => {
-              return (
-                <Banner
-                  key={index}
-                  image={item.backdrop_path}
-                  title={item.title}
-                />
-              )
-            })}
         </div>
       </section>
     </div>
