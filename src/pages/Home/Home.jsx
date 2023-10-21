@@ -6,6 +6,7 @@ import axios from "axios"
 import { useEffect } from "react"
 import { FaAngleLeft } from "react-icons/fa"
 import { FaAngleRight } from "react-icons/fa"
+import { HiOutlineSearch } from "react-icons/hi"
 import Banner from "./components/Banner"
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
@@ -83,6 +84,15 @@ const Home = () => {
   return (
     <div>
       <Navbar />
+      <section className="wrapper">
+        <div className="app__search">
+          <form action="">
+            <input type="text" placeholder="Search" className="input-search" />
+          </form>
+
+          <HiOutlineSearch size={40} className="icon-search" />
+        </div>
+      </section>
       <section className="wrapper">
         <h1 className="trend">Now Playing</h1>
         <Carousel

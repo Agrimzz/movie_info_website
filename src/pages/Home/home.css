@@ -55,3 +55,36 @@
   /* display: flex; */
   margin-top: 2rem;
 }
+
+.app__search {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-lgrey);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+}
+
+.app__search form {
+  width: 100%;
+}
+
+.input-search {
+  width: 100%;
+  padding: 1rem;
+  outline: none;
+  border: none;
+  background-color: var(--color-lgrey);
+  color: var(--color-golden);
+  font-size: 18px;
+}
+
+.input-search::placeholder {
+  color: var(--color-golden);
+}
+
+.icon-search {
+  color: var(--color-golden);
+  cursor: pointer;
+}
