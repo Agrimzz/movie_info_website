@@ -85,12 +85,19 @@ const Home = () => {
     <div>
       <Navbar />
       <section className="wrapper">
-        <div className="app__search">
-          <form action="">
-            <input type="text" placeholder="Search" className="input-search" />
-          </form>
+        <div className="search-container">
+          <p className="search-text">Search for movies!</p>
+          <div className="app__search">
+            <form action="">
+              <input
+                type="text"
+                placeholder="Search"
+                className="input-search"
+              />
+            </form>
 
-          <HiOutlineSearch size={40} className="icon-search" />
+            <HiOutlineSearch size={40} className="icon-search" />
+          </div>
         </div>
       </section>
       <section className="wrapper">

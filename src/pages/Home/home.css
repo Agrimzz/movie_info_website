@@ -56,6 +56,12 @@
   margin-top: 2rem;
 }
 
+.search-container {
+  background-color: var(--color-golden);
+  padding: 2rem;
+  border-radius: 2rem;
+}
+
 .app__search {
   width: 100%;
   display: flex;
@@ -78,6 +84,7 @@
   background-color: var(--color-lgrey);
   color: var(--color-golden);
   font-size: 18px;
+  border-radius: 0.5rem;
 }
 
 .input-search::placeholder {
@@ -87,4 +94,10 @@
 .icon-search {
   color: var(--color-golden);
   cursor: pointer;
+}
+
+.search-text {
+  color: var(--color-lgrey);
+  font-size: 40px;
+  margin-bottom: 1rem;
 }
