@@ -1,0 +1,46 @@
+.app__details {
+  width: 100%;
+  display: flex;
+  gap: 5rem;
+  margin: 2rem 0;
+}
+
+.app__details-image {
+  width: 400px;
+  flex: 0 0 auto;
+}
+
+.app__details-image img {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.app__details-text {
+  color: var(--color-golden);
+}
+
+.movie-title {
+  font-size: 50px;
+}
+
+.movie-info {
+  display: flex;
+  gap: 1rem;
+  color: var(--color-lgrey);
+}
+
+.movie-genre {
+  display: flex;
+}
+
+.movie-tagline {
+  color: var(--color-dgrey);
+  margin-top: 1rem;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.movie-overview {
+  font-size: 18px;
+  margin-top: 1rem;
+}

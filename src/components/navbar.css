@@ -1,11 +1,14 @@
+nav {
+  border-bottom: 1px solid var(--color-golden);
+}
+
 .app__nav {
   width: 100%;
   color: var(--color-lgrey);
-  padding: 2rem 8rem;
+  padding: 2rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--color-golden);
 }
 
 .app__nav-logo h1 {

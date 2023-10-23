@@ -1,6 +1,7 @@
 .trend {
   color: var(--color-golden);
   font-size: 25px;
+  margin-top: 2rem;
 }
 
 .slider-container {
@@ -60,6 +61,7 @@
   background-color: var(--color-golden);
   padding: 2rem;
   border-radius: 2rem;
+  margin: 2rem 0;
 }
 
 .app__search {

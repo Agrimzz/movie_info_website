@@ -10,6 +10,7 @@ import { HiOutlineSearch } from "react-icons/hi"
 import Banner from "./components/Banner"
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
+import { Link } from "react-router-dom"
 
 const Home = () => {
   const [data, setData] = useState([])
@@ -125,6 +126,7 @@ const Home = () => {
                   title={item.title}
                   date={item.release_date}
                   details={item.overview}
+                  id={item.id}
                 />
               )
             })}
@@ -145,13 +147,14 @@ const Home = () => {
                 {data.length > 0 &&
                   data.map((item, index) => {
                     return (
-                      <Card
-                        key={index}
-                        title={item.title}
-                        date={item.release_date}
-                        image={item.poster_path}
-                        rating={item.vote_average}
-                      />
+                      <Link to={`/movie/${item.id}`} key={index}>
+                        <Card
+                          title={item.title}
+                          date={item.release_date}
+                          image={item.poster_path}
+                          rating={item.vote_average}
+                        />
+                      </Link>
                     )
                   })}
               </div>

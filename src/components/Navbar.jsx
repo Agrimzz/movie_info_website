@@ -2,7 +2,7 @@ import "./navbar.css"
 const Navbar = () => {
   return (
     <nav>
-      <div className="app__nav">
+      <div className="app__nav wrapper">
         <div className="app__nav-logo">
           <h1>
             Movie<span className="golden">Info</span>

@@ -1,6 +1,7 @@
 import "./banner.css"
+import { Link } from "react-router-dom"
 
-const Banner = ({ image, title, details, date }) => {
+const Banner = ({ image, title, details, date, id }) => {
   const truncatedDetails =
     details.length > 200 ? `${details.slice(0, 200)}...` : details
   return (
@@ -16,7 +17,9 @@ const Banner = ({ image, title, details, date }) => {
         <h2>{title}</h2>
         <p className="banner-date">{date}</p>
         <p className="banner-details">{truncatedDetails}</p>
-        <button>Vew More</button>
+        <Link to={`/movie/${id}`}>
+          <button>Vew More</button>
+        </Link>
       </div>
     </div>
   )
