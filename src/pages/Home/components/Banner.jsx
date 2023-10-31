@@ -8,7 +8,7 @@ const Banner = ({ image, title, details, date, id }) => {
     <div className="app__banner">
       <div className="app__banner-image">
         <img
-          src={`https://image.tmdb.org/t/p/w500${image}`}
+          src={`https://image.tmdb.org/t/p/original${image}`}
           alt=""
           draggable="false"
         />

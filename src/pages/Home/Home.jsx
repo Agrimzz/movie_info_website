@@ -15,6 +15,7 @@ import { Link } from "react-router-dom"
 const Home = () => {
   const [data, setData] = useState([])
   const [banner, setBanner] = useState([])
+  const [searchQuery, setSearchQuery] = useState("")
   const sliderRef = useRef(null)
 
   useEffect(() => {
@@ -94,10 +95,12 @@ const Home = () => {
                 type="text"
                 placeholder="Search"
                 className="input-search"
+                onChange={(e) => setSearchQuery(e.target.value)}
               />
             </form>
-
-            <HiOutlineSearch size={40} className="icon-search" />
+            <Link to={`/search/${searchQuery}`}>
+              <HiOutlineSearch size={40} className="icon-search" />
+            </Link>
           </div>
         </div>
       </section>
@@ -107,7 +110,7 @@ const Home = () => {
           className="banner-container"
           responsive={responsive}
           autoPlay={true}
-          autoPlaySpeed={6000}
+          autoPlaySpeed={10000}
           infinite={true}
           removeArrowOnDeviceType={[
             "superLargeDesktop",

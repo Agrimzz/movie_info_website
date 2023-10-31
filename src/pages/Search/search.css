@@ -1,0 +1,15 @@
+.search-textt {
+  color: var(--color-lgrey);
+  font-size: 18px;
+  margin: 2rem 0;
+}
+
+.search-query {
+  color: var(--color-golden);
+}
+
+.search-results {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
